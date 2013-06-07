@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="WpfExample.BindingChainExample.BindingChainExampleControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300"
+             DataContext="{Binding RelativeSource={RelativeSource Self}, Path=DataSource}" Width="516">
+    <!-- TODO add to grid -->
+    <Grid>
+        <Label Content="InternalObject" Margin="32,38,0,0" VerticalAlignment="Top" Height="27" HorizontalAlignment="Left" Width="167"/>
+        <Label Content="{Binding InternalObject}" Height="27" Margin="150,38,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="346" BorderBrush="Black" BorderThickness="1"/>
+        <Button x:Name="ActionButton" Content="Button" HorizontalAlignment="Left" Margin="190,124,0,0" VerticalAlignment="Top" Width="137" Click="ActionButtonClick"/>
+        
+        <Label Content="InternalObject.Text" Margin="32,80,0,0" VerticalAlignment="Top" Height="27" HorizontalAlignment="Left" Width="167"/>
+        <TextBox Text="{Binding InternalObject.Text}"  Height="23" Margin="150,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="True" HorizontalAlignment="Left" Width="346"/>
+    </Grid>
+</UserControl>
